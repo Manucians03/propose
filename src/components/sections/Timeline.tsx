@@ -16,10 +16,16 @@ const ExperienceCard: React.FC<TTimeline> = (timeline) => {
   return (
     <VerticalTimelineElement
       contentStyle={{
-        background: "#1d1836",
+        background: "#8D765B",
         color: "#fff",
+        boxShadow: "0px 35px 120px -15px #25190d",
       }}
-      contentArrowStyle={{ borderRight: "7px solid  #232631" }}
+      contentArrowStyle={{ borderRight: "7px solid  #8D765B" }}
+      iconStyle={{
+        background: "#fff", 
+        border: "none",
+        boxShadow: "none", 
+      }}
       date={timeline.date}
     >
       <div>

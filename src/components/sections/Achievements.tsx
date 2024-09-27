@@ -20,15 +20,17 @@ const AchievementCard: React.FC<IAchievementCard> = ({ index, title, number }) =
     tiltEnable
     tiltMaxAngleX={30}
     tiltMaxAngleY={30}
-    glareColor="#aaa6c3"
+    glareColor="#f9ebc7"
   >
     <div className="xs:w-[250px] w-full">
       <motion.div
         variants={fadeIn("right", "spring", index * 0.5, 0.75)}
-        className="green-pink-gradient shadow-card w-full rounded-[20px] p-[1px]"
+        className="shadow-card w-full rounded-[20px] p-[1px]"
       >
         <div className="bg-tertiary flex min-h-[280px] flex-col items-center justify-evenly rounded-[20px] px-12 py-5">
-          {number}
+          <h1 className="text-[70px] font-bold text-white">
+            {number}
+          </h1>
           <h3 className="text-center text-[20px] font-bold text-white">
             {title}
           </h3>
@@ -38,16 +40,16 @@ const AchievementCard: React.FC<IAchievementCard> = ({ index, title, number }) =
   </Tilt>
 );
 
-const Achievement = () => {
+const Achievements = () => {
   return (
     <>
-      <Header useMotion={true} {...config.sections.achievement} />
+      <Header useMotion={true} {...config.sections.achievements} />
 
       <motion.p
         variants={fadeIn("", "", 0.1, 1)}
         className="text-secondary mt-4 max-w-3xl text-[17px] leading-[30px]"
       >
-        {config.sections.achievement.content}
+        {config.sections.achievements.content}
       </motion.p>
 
       <div className="mt-20 flex flex-wrap gap-10 max-sm:justify-center">
@@ -59,4 +61,4 @@ const Achievement = () => {
   );
 };
 
-export default SectionWrapper(Achievement, "achievement");
+export default SectionWrapper(Achievements, "achievements");

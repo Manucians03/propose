@@ -1,9 +1,13 @@
 import Navbar from "./Navbar";
-import Achievement from "./sections/Achievement";
+import Introduction from "./sections/Introduction";
+import Achievements from "./sections/Achievements";
 import Timeline from "./sections/Timeline";
+import Questionnaire from "./sections/Questionnaire";
 
 export {
   Navbar,
-  Achievement,
+  Introduction,
+  Achievements,
   Timeline,
+  Questionnaire,
 };

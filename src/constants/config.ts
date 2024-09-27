@@ -9,9 +9,10 @@ type TConfig = {
     title: string;
   };
   sections: {
-    achievement: TSection;
+    introduction: TSection;
+    achievements: TSection;
     timeline: TSection;
-    question?: TSection;
+    questionnaire: TSection;
   };
 };
 
@@ -20,13 +21,22 @@ export const config: TConfig = {
     title: "Dihu ơi",
   },
   sections: {
-    achievement: {
-      p: "Achievement",
-      h2: "Our milestones.",
+    introduction: {
+      p: "Cher ma dieu,",
+      h2: "",
+      content: "Cảm ơn em đã đi chơi anh 2 tháng nay. Anh biết anh nợ em 1 câu hỏi. Nhưng mà trước hết cùng điểm qua những gì mình đã làm nhé!!!"
     },
     timeline: {
-      p: "Timeline",
-      h2: "Our love story.",
+      p: "Our love story.",
+      h2: "Timeline",
+    },
+    achievements: {
+      p: "Our milestones, approximately nhá.",
+      h2: "Achievements",
+    },
+    questionnaire: {
+      p: "Caaaau hỏi",
+      h2: ""
     },
   },
 };

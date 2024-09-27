@@ -1,8 +1,10 @@
 import { BrowserRouter } from "react-router-dom";
 
 import {
-  Achievement,
+  Introduction,
+  Achievements,
   Timeline,
+  Questionnaire,
   Navbar,
 } from "./components";
 import { useEffect } from "react";
@@ -18,11 +20,13 @@ const App = () => {
   return (
     <BrowserRouter>
       <div className="bg-primary relative z-0">
-        <div className="bg-hero-pattern bg-cover bg-center bg-no-repeat">
+        <div className="bg-cover bg-center bg-no-repeat">
           <Navbar />
         </div>
-        <Achievement />
+        <Introduction />
         <Timeline />
+        <Achievements />
+        <Questionnaire />
       </div>
     </BrowserRouter>
   );

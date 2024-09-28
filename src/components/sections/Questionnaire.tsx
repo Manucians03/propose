@@ -3,61 +3,42 @@ import { Header } from "../Header";
 import { config } from "../../constants/config";
 import { motion } from "framer-motion";
 import { fadeIn } from "../../utils/motion";
-import { useState, useRef, useEffect } from 'react';
+import { useState } from 'react';
+import { FaStar } from 'react-icons/fa';
 
 
 const Questionnaire = () => {
-
     const [step, setStep] = useState(0);
-    const [hoveringNo, setHoveringNo] = useState(false);
-    const [noButtonPosition, setNoButtonPosition] = useState({ top: '0px', left: '0px' });
-    const noButtonRef = useRef<HTMLButtonElement>(null);
-    const yesButtonRef = useRef<HTMLButtonElement>(null);
-    const containerRef = useRef<HTMLDivElement>(null);
-
-    const handleYesClick = () => {
-        if (step < 2) {
-            setStep(step + 1);
-        } else {
-            setStep(3);
-        }
-    };
+    const [noButtonPosition, setNoButtonPosition] = useState({ top: '50%', left: '65%' });
+    const [rating, setRating] = useState(0);
+    const [hoverRating, setHoverRating] = useState(0);
 
     const handleNoHover = () => {
-        setHoveringNo(true);
-        const newPosition = getRandomPosition();
-        setNoButtonPosition(newPosition);
-    };
-    
-    const resetHovering = () => {
-        setHoveringNo(false);
+        const randomTop = Math.random() * 80 + 10;  
+        const randomLeft = Math.random() * 80 + 10;
+        setNoButtonPosition({
+            top: `${randomTop}%`,
+            left: `${randomLeft}%`
+        });
     };
 
-    const getRandomPosition = () => {
-        if (!containerRef.current || !noButtonRef.current || !yesButtonRef.current) {
-            return { top: '0px', left: '0px' };
+    const handleYesClick = () => {   
+        setStep(step + 1);
+        setNoButtonPosition({ top: '50%', left: '65%' });
+    }
+
+    const handleNoClick = () => {
+        alert("Wrong answer! Try again!");
+    }
+
+    const handleStarClick = (rating: number) => {
+        if (rating <= 4) {
+            alert("Wrong answer! Try again!");
+        } else {
+            setRating(rating);
         }
-        const containerRect = containerRef.current.getBoundingClientRect();
-        const noButtonRect = noButtonRef.current.getBoundingClientRect();
-        const yesButtonRect = yesButtonRef.current.getBoundingClientRect();
+    }
 
-        const maxLeft = containerRect.width - noButtonRect.width;
-        const maxTop = containerRect.height - noButtonRect.height;
-
-        let newTop, newLeft;
-
-        do {
-        newLeft = Math.random() * maxLeft;
-        newTop = Math.random() * maxTop;
-        } while (
-            newLeft < yesButtonRect.right &&
-            newLeft + noButtonRect.width > yesButtonRect.left &&
-            newTop < yesButtonRect.bottom &&
-            newTop + noButtonRect.height > yesButtonRect.top
-        );
-
-        return { top: `${newTop}px`, left: `${newLeft}px` };
-    };
 
     return (
         <>
@@ -65,40 +46,66 @@ const Questionnaire = () => {
             <motion.p
                 variants={fadeIn("", "", 0.1, 1)}
                 className="text-secondary mt-4 max-w-3xl text-[17px] leading-[30px]"
-            >
+            >         
             </motion.p>
 
-            <div ref={containerRef} className="container text-center mt-5 position-relative" style={{ height: '300px' }}>
-                {step === 1 && <h1>Can I be your boyfriend?</h1>}
-                {step === 2 && <h1>Are you sure?</h1>}
-                {step === 3 && <h1>Are you really sure?</h1>}
-                {step === 4 && (
-                    <div className="congratulations alert alert-success" role="alert">
-                    <h1>Congratulations!</h1>
+            {step < config.sections.questionnaire.content.length &&
+            (
+                <div className="text-quaternary flex flex-col items-center items-center min-h-[450px] w-full p-20">
+                    <div className="min-h-[100px] font-bold text-[48px]">{config.sections.questionnaire.content[step].question}</div>
+                    <div className="relative flex-grow h-full w-full flex justify-center items-center">
+                        <button 
+                            className="shadow-card bg-green-500 py-5 px-12 rounded-[20px] absolute border border-3 border-quinary"
+                            style={{ top: '50%', left: '35%', transform: 'translate(-50%, -50%)' }}
+                            onClick={handleYesClick}
+                        >
+                            {config.sections.questionnaire.content[step].yes}
+                        </button>
+                        <motion.button
+                            className="shadow-card bg-red-500 py-5 px-12 rounded-[20px] absolute border border-3 border-quinary"
+                            style={{ transform: 'translate(-50%, -50%)' }}
+                            animate={{ top: noButtonPosition.top, left: noButtonPosition.left }}
+                            transition={{ type: 'spring', stiffness: 300, damping: 20 }}
+                            onMouseEnter={handleNoHover}
+                            onClick={handleNoClick}
+                        >
+                            {config.sections.questionnaire.content[step].no}
+                        </motion.button>
                     </div>
-                )}
+                </div>   
+            )}
 
-                {step < 4 && (
-                    <div className="d-flex justify-content-center mt-4 position-relative">
-                    <button
-                        ref={yesButtonRef}
-                        onClick={handleYesClick}
-                        className="btn btn-success me-3"
-                    >
-                        Yes
-                    </button>
-                    <button
-                        ref={noButtonRef}
-                        onMouseEnter={handleNoHover}
-                        onMouseLeave={resetHovering}
-                        className="btn btn-danger position-absolute"
-                        style={{ top: noButtonPosition.top, left: noButtonPosition.left }}
-                    >
-                        No
-                    </button>
+            {step >= config.sections.questionnaire.content.length &&
+            (
+                <div className="text-quaternary flex flex-col items-center ">
+                    <div className="flex flex-col items-center min-h-[450px] w-full p-20">
+                        <div className="min-h-[150px] font-bold text-[48px]">Congratulations! Please rate this game!</div>
+                        <div className="flex items-center">
+                            {[...Array(5)].map((_, index) => {
+                                const ratingValue = index + 1;
+                                return (
+                                <label key={index} style={{ marginRight: '15px', cursor: 'pointer' }}>
+                                    <input 
+                                    type="radio" 
+                                    name="rating" 
+                                    value={ratingValue} 
+                                    onClick={() => handleStarClick(ratingValue)}
+                                    style={{ display: "none" }}
+                                    />
+                                    <FaStar 
+                                    className="star" 
+                                    color={ratingValue <= (hoverRating || rating) ? "#ffc107" : "#e4e5e9"} 
+                                    size={100} 
+                                    onMouseEnter={() => setHoverRating(ratingValue)}
+                                    onMouseLeave={() => setHoverRating(0)}
+                                    />
+                                </label>
+                                );
+                            })}
+                        </div>
                     </div>
-                )}
-            </div>
+                </div>   
+            )}
         </>
     )
 }

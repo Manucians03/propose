@@ -22,3 +22,9 @@ body {
   display: block;
 }
 
+.border-3 {
+  border-width:3px !important;
+  border-radius:20px !important;
+}
+
+

@@ -1,7 +1,7 @@
 type TSection = {
   p: string;
   h2: string;
-  content?: string;
+  content?: any;
 };
 
 type TConfig = {
@@ -37,6 +37,23 @@ export const config: TConfig = {
     questionnaire: {
       p: "Uki chốt lại là cho anh hỏi nè.",
       h2: "The Question",
+      content: [
+        {
+          question: "Anh có thể làm người yêu em không? 🥺",
+          yes: "Uki!",
+          no: "Không choa!",
+        },
+        {
+          question: "Es-tu sûr?!",
+          yes: "Ouais.",
+          no: "Non.",
+        },
+        {
+          question: "Are you really really reallyyy sure?",
+          yes: "Yesss baby let's kiss!",
+          no: "Nooo I hate this game!",
+        },
+      ],
     },
   },
 };

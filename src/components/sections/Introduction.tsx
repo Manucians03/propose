@@ -6,7 +6,7 @@ import { fadeIn } from "../../utils/motion";
 
 const Introduction = () => {
     return (
-        <>
+        <div>
             <Header useMotion={true} {...config.sections.introduction} />
             <motion.p
                 variants={fadeIn("", "", 0.1, 1)}
@@ -14,7 +14,7 @@ const Introduction = () => {
             >
                 {config.sections.introduction.content}
             </motion.p>
-        </>
+        </div>
     )
 }
 

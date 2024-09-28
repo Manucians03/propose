@@ -8,6 +8,7 @@ module.exports = {
         primary: "#414833",
         secondary: "#a9b388",
         tertiary: "#8D765B",
+        quaternary: "#f9ebc7",
       },
       boxShadow: {
         card: "0px 35px 120px -15px #25190d",

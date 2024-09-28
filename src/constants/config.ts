@@ -23,11 +23,11 @@ export const config: TConfig = {
   sections: {
     introduction: {
       p: "Cher ma dieu,",
-      h2: "",
+      h2: "Introduction",
       content: "Cảm ơn em đã đi chơi anh 2 tháng nay. Anh biết anh nợ em 1 câu hỏi. Nhưng mà trước hết cùng điểm qua những gì mình đã làm nhé!!!"
     },
     timeline: {
-      p: "Our love story.",
+      p: "Our love story hehe.",
       h2: "Timeline",
     },
     achievements: {
@@ -35,8 +35,8 @@ export const config: TConfig = {
       h2: "Achievements",
     },
     questionnaire: {
-      p: "Caaaau hỏi",
-      h2: ""
+      p: "Uki chốt lại là cho anh hỏi nè.",
+      h2: "The Question",
     },
   },
 };

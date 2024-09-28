@@ -83,23 +83,16 @@ const Navbar = () => {
         </ul>
 
         <div className="flex flex-1 items-center justify-end sm:hidden">
-          <img
-            src={toggle ? "" : ""}
-            alt="menu"
-            className="h-[28px] w-[28px] object-contain"
-            onClick={() => setToggle(!toggle)}
-          />
-
           <div
             className={`${
               !toggle ? "hidden" : "flex"
-            } dark-gradient absolute right-0 top-20 z-10 mx-4 my-2 min-w-[140px] rounded-xl p-6`}
+            } absolute right-0 top-20 z-10 mx-4 my-2 min-w-[140px] rounded-xl p-6`}
           >
             <ul className="flex flex-1 list-none flex-col items-start justify-end gap-4">
               {navLinks.map((nav) => (
                 <li
                   key={nav.id}
-                  className={`font-poppins cursor-pointer text-[16px] font-medium ${
+                  className={`cursor-pointer text-[16px] font-medium ${
                     active === nav.id ? "text-white" : "text-secondary"
                   }`}
                   onClick={() => {

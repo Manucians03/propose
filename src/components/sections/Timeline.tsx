@@ -19,6 +19,7 @@ const ExperienceCard: React.FC<TTimeline> = (timeline) => {
         background: "#8D765B",
         color: "#fff",
         boxShadow: "0px 35px 120px -15px #25190d",
+        borderRadius: "20px",
       }}
       contentArrowStyle={{ borderRight: "7px solid  #8D765B" }}
       iconStyle={{
@@ -28,18 +29,15 @@ const ExperienceCard: React.FC<TTimeline> = (timeline) => {
       }}
       date={timeline.date}
     >
-      <div>
-        <h3 className="text-[24px] font-bold text-white">{timeline.name}</h3>
-        <p
-          className="text-secondary text-[16px] font-semibold"
-          style={{ margin: 0 }}
-        >
-          {timeline.name}
-        </p>
-      </div>
+      <h3 className="text-[24px] font-bold text-white">{timeline.name}</h3>
+      {timeline.photo !== "" && <img
+        src={timeline.photo}
+        className="w-full h-[300px] object-cover rounded-[20px] mt-5 mar"
+      />}
+      <p className="text-[18px] font-medium text-white mt-5">
+        {timeline.description}
+      </p>
 
-      {timeline.description}
-      {timeline.photo}
     </VerticalTimelineElement>
   );
 };

@@ -4,10 +4,6 @@ import type {
   TTimeline,
 } from "../types";
 
-import {
-  
-} from "../assets";
-
 const navLinks: TNavLink[] = [
   {
     id: "introduction",
@@ -23,7 +19,7 @@ const navLinks: TNavLink[] = [
   },
   {
     id: "questionnaire",
-    title: "Questionnaire",
+    title: "The Question",
   },
 ];
 
@@ -48,8 +44,14 @@ const achievements: TAchievement[] = [
 
 const timelines: TTimeline[] = [
   {
-    name: "Lần đầu đi chơi",
+    name: "Xem Before Runrise",
     photo: "",
+    date: "14/04/2024",
+    description: "Lol",
+  },
+  {
+    name: "Lần đầu đi chơi",
+    photo: "/src/assets/images/landau.png",
     date: "19/07/2024",
     description: "Không có ảnh hôm này huhu!!!",
   },

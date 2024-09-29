@@ -9,6 +9,7 @@ import {
 } from "./components";
 import { useEffect } from "react";
 import { config } from "./constants/config";
+import { Toaster } from "react-hot-toast";
 
 const App = () => {
   useEffect(() => {
@@ -28,6 +29,7 @@ const App = () => {
         <Achievements />
         <Questionnaire />
       </div>
+      <Toaster />
     </BrowserRouter>
   );
 };

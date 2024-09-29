@@ -5,6 +5,8 @@ import { motion } from "framer-motion";
 import { fadeIn } from "../../utils/motion";
 import { useState } from 'react';
 import { FaStar } from 'react-icons/fa';
+import toast from "react-hot-toast";
+
 
 
 const Questionnaire = () => {
@@ -28,12 +30,12 @@ const Questionnaire = () => {
     }
 
     const handleNoClick = () => {
-        alert("Wrong answer! Try again!");
+        toast.error("Wrong answer! Try again!");
     }
 
     const handleStarClick = (rating: number) => {
         if (rating <= 4) {
-            alert("Wrong answer! Try again!");
+            toast.error("Wrong answer! Try again!");
         } else {
             setRating(rating);
         }
@@ -78,9 +80,13 @@ const Questionnaire = () => {
             {step >= config.sections.questionnaire.content.length &&
             (
                 <div className="text-quaternary flex flex-col items-center ">
-                    <div className="flex flex-col items-center min-h-[450px] w-full p-20">
-                        <div className="min-h-[150px] font-bold text-[48px]">Congratulations! Please rate this game!</div>
-                        <div className="flex items-center">
+                    <div className="flex flex-col items-center min-h-[450px] w-full p-10">
+                        <div className="min-h-[150px] font-bold text-[36px] items-center flex flex-col">
+                            <p>Congratulations! You won!</p>
+                            <p>Phần thưởng của bạn là @tresminh.</p>
+                            <p>Évalue ton expérience!</p>
+                        </div>
+                        <div className="flex items-center p-10">
                             {[...Array(5)].map((_, index) => {
                                 const ratingValue = index + 1;
                                 return (

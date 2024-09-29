@@ -28,7 +28,7 @@ const AchievementCard: React.FC<IAchievementCard> = ({ index, title, number }) =
         className="shadow-card w-full rounded-[20px] border border-3 border-quinary"
       >
         <div className="bg-tertiary flex min-h-[280px] flex-col items-center justify-evenly rounded-[18px] px-12 py-5">
-          <h1 className="text-[70px] font-bold text-white">
+          <h1 className="text-[70px] font-bold text-quaternary">
             {number}
           </h1>
           <h3 className="text-center text-[20px] font-bold text-white">

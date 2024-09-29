@@ -24,7 +24,7 @@ export const config: TConfig = {
     introduction: {
       p: "Cher ma dieu,",
       h2: "Introduction",
-      content: "Cảm ơn em đã đi chơi anh 2 tháng nay. Anh biết anh nợ em 1 câu hỏi. Nhưng mà trước hết cùng điểm qua những gì mình đã làm nhé!!!"
+      content: "Cảm ơn em đã nhận lời đi chơi với anh và yêu thương anh. Anh vô cùng ngạo nghễ vì đã là người được em lựa chọn và tin tưởng. 2 tháng vừa qua anh rất vui, và dù rằng mình chưa official nhưng bên trong anh đã coi em là bồ từ lâu rồi hehe. Tuy vậy anh biết là anh vẫn nợ em 1 câu hỏi đàng hoàng, vậy nên anh đã viết con website này vừa để tặng em, vừa để hỏi em một cách tử tế. Trước hết mình hãy cùng điểm qua bảng vàng thành tích của Tuấn Minh và Diệu Hương nhé!"
     },
     timeline: {
       p: "Our love story hehe.",
@@ -39,7 +39,7 @@ export const config: TConfig = {
       h2: "The Question",
       content: [
         {
-          question: "Anh có thể làm người yêu em không? 🥺",
+          question: "Anh có thể làm người yêu em không? 🥹",
           yes: "Uki!",
           no: "Không choa!",
         },

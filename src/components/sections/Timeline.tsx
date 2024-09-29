@@ -12,7 +12,7 @@ import { Header } from "../Header";
 import { TTimeline } from "../../types";
 import { config } from "../../constants/config";
 
-const ExperienceCard: React.FC<TTimeline> = (timeline) => {
+const TimelineCard: React.FC<TTimeline> = (timeline) => {
   return (
     <VerticalTimelineElement
       contentStyle={{
@@ -31,7 +31,7 @@ const ExperienceCard: React.FC<TTimeline> = (timeline) => {
       }}
       date={timeline.date}
     >
-      <h3 className="text-[24px] font-bold text-white">{timeline.name}</h3>
+      <h3 className="text-[24px] font-bold text-quaternary">{timeline.name}</h3>
       {timeline.photo !== "" && <img
         src={timeline.photo}
         className="w-full h-[300px] object-cover rounded-[20px] mt-3"
@@ -52,7 +52,7 @@ const Timeline = () => {
       <div className="mt-20 flex flex-col">
         <VerticalTimeline>
           {timelines.map((timeline, index) => (
-            <ExperienceCard key={index} {...timeline} />
+            <TimelineCard key={index} {...timeline} />
           ))}
         </VerticalTimeline>
       </div>

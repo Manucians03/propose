@@ -36,11 +36,11 @@ const achievements: TAchievement[] = [
   },
   {
     title: "Hours on call",
-    number: 40,
+    number: 60,
   },
   {
     title: "Snaps",
-    number: 10000,
+    number: 12000,
   },
 ];
 
@@ -85,7 +85,7 @@ const timelines: TTimeline[] = [
     name: "Đi chơi Hà Nội tập 2",
     photo: assets.emvahoa,
     date: "07-10/08/2024",
-    description: "Buổi date hôm thứ 4 thành công ác: mình đi ăn ramen, đi làm nến rồi đi Bình Minh Jazz Club. On Friday we cooked, we cleaned, I teached, we slept and we discovered our talent for cuddling. And I got you the first bouquet of flowers. Date xong em đi Ba Vì còn anh đi gặp chồng yêu lần 2 hihi 🍭",
+    description: "Buổi date hôm thứ 4 thành công ác: mình đi ăn ramen, đi làm nến rồi đi Bình Minh Jazz Club. On Friday we cooked, we cleaned, I teached, we slept and we discovered our talent for cuddling. And I got you the first bouquet of flowers. Date xong em đi Đại Lải còn anh đi gặp chồng yêu lần 2 hihi 🍭",
   },
   {
     name: "Cuối tuần thứ 2 ở Hải Phòng",
@@ -122,6 +122,12 @@ const timelines: TTimeline[] = [
     photo: assets.hoahong,
     date: "04/09/2024",
     description: "Nhìn hoa ngày cuối anh tặng em nè. Thế là hết dấu chân đôi mình ở Việt Nam...",
+  },
+  {
+    name: "SHE SAID YESSS!!!",
+    photo: assets.propose,
+    date: "29/09/2024",
+    description: "Tròn 2 tháng dating and she said yes!!! Lạ đời 2 đứa sợ commitment sợ yêu xa xong dí đầu vào LDR. We're in for a ride babe so buckle up! Chịu khó yêu xa hẹn một ngày không xa được yêu gần ạ.",
   },
 ];
 

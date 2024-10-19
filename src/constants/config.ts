@@ -44,7 +44,7 @@ export const config: TConfig = {
           no: "Không choa!",
         },
         {
-          question: "Es-tu sûr?!",
+          question: "Es-tu sûre?!",
           yes: "Ouais.",
           no: "Non.",
         },

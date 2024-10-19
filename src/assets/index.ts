@@ -9,6 +9,7 @@ import hoahong from "./images/hoahong.jpg";
 import kem from "./images/kem.jpg";
 import kiss from "./images/kiss.jpg";
 import lastday from "./images/lastday.jpg";
+import propose from "./images/propose.png";
 
 export {
     anhvatui,
@@ -22,4 +23,5 @@ export {
     kem,
     kiss,
     lastday,
+    propose
 };

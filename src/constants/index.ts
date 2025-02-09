@@ -28,19 +28,19 @@ const navLinks: TNavLink[] = [
 const achievements: TAchievement[] = [
   {
     title: "Bó hoa",
-    number: 5,
+    number: 6,
   },
   {
     title: "Cốc trà đá",
-    number: 15,
+    number: 50,
   },
   {
     title: "Hours on call",
-    number: 60,
+    number: 200,
   },
   {
     title: "Snaps",
-    number: 12000,
+    number: 20000,
   },
 ];
 
